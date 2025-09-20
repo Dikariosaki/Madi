@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:300,400,700' rel='stylesheet'>
+    <link rel="stylesheet" href="./login-style.css">
+    <title>login</title>
+</head>
+<body>
+    <!-- Animación de corazones cayendo -->
+    <div class="hearts-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Inicio de sesión</h1>
+                <p>Ingresa tus credenciales para acceder a tu sorpresa</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" required>
+                    <span class="input-icon">👤</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="input-icon">🔒</span>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <span>Entrar</span>
+                    <div class="btn-hearts">💕</div>
+                </button>
+                
+                <div id="error-message" class="error-message" style="display: none;">
+                    ❌ Credenciales incorrectas. ¡Inténtalo de nuevo!
+                </div>
+            </form>
+            
+            <div class="login-footer">
+                <p>Te quiero un monton ing ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./login.js"></script>
+</body>
+</html>
