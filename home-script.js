@@ -1,3 +1,49 @@
+// Función para verificar si el usuario está autenticado
+function checkAuthentication() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const loginTime = localStorage.getItem('loginTime');
+    
+    // Verificar si no está logueado
+    if (isLoggedIn !== 'true') {
+        redirectToLogin();
+        return false;
+    }
+    
+    // Verificar si la sesión ha expirado (opcional: 24 horas)
+    if (loginTime) {
+        const loginDate = new Date(loginTime);
+        const now = new Date();
+        const hoursDifference = (now - loginDate) / (1000 * 60 * 60);
+        
+        // Si han pasado más de 24 horas, cerrar sesión
+        if (hoursDifference > 24) {
+            logout();
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+// Función para redirigir al login
+function redirectToLogin() {
+    console.log('❌ Usuario no autenticado, redirigiendo al login...');
+    window.location.href = './index.html';
+}
+
+// Función para cerrar sesión
+function logout() {
+    console.log('⏰ Sesión expirada, cerrando sesión...');
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('loginTime');
+    redirectToLogin();
+}
+
+// Verificar autenticación al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    checkAuthentication();
+});
+
 // Función para enviar notificación por email cuando se abre un modal
 async function sendModalNotification(modalTitle) {
     try {
@@ -55,6 +101,11 @@ Notificación automática del sistema de modales
 }
 
 function openModal(modalId) {
+    // Verificar autenticación antes de abrir el modal
+    if (!checkAuthentication()) {
+        return; // Si no está autenticado, no abrir el modal
+    }
+    
     const modal = document.getElementById(modalId);
     const modalTitle = modal.querySelector('.modal-title').textContent;
     

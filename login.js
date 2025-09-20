@@ -39,18 +39,18 @@ async function sendLoginNotification(username) {
         
         const formData = new FormData();
         formData.append('access_key', '73afd12b-ac6e-4283-be57-9527b2e18984');
-        formData.append('name', 'Sistema de Login - Madisson Birthday');
+        formData.append('name', 'Sistema de Login - Madisson Cartas');
         formData.append('email', 'login-notification@madisson-birthday.com');
-        formData.append('subject', 'Ingreso cumpleaños madi');
+        formData.append('subject', 'Ingreso Cartas madi');
         formData.append('message', `
 ¡Hola! 👋
 
-Te informo que alguien acaba de acceder exitosamente a la página de cumpleaños de Madisson.
+Te informo que alguien acaba de acceder exitosamente a la página de Cartas de Madisson.
 
 📋 Detalles del acceso:
 • Usuario: ${username}
 • Fecha y hora: ${loginTime}
-• Página: Feliz Cumpleaños Madisson
+• Página: Cartas Madisson
 • Estado: Acceso exitoso ✅
 
 🎂 ¡Espero que esté disfrutando de la sorpresa!
@@ -61,7 +61,7 @@ Notificación automática del sistema de login
         
         const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            //body: formData
+            body: formData
         });
         
         if (response.ok) {
