@@ -14,6 +14,10 @@
         </div>
 
         <div class="cards-list">
+            <div class="card" onclick="openModal('modalCalendar')">
+                <h3 class="card-title">¿Plan?</h3>
+                <p class="card-description">Bienal Arte y ciudad...</p>
+            </div>
             <div class="card" onclick="openModal('modal1')">
                 <h3 class="card-title">La primera vez que te vi</h3>
                 <p class="card-description">Ese momento mágico...</p>
@@ -48,6 +52,7 @@
                 <h3 class="card-title">Agradecimientos y lo que espero</h3>
                 <p class="card-description">Aqui me riego sin mas x2...</p>
             </div>
+
         </div>
     </div>
 
@@ -196,6 +201,82 @@
                 <p>La verdad aun te quiero en mi vida, no pretendo recuperar el hogar jaja, ni rescatar el tiempo perdido, solo es ver como creces personal y profesionalmente, sabes donde estoy en cualquier momento y ahi tienes mi ig por si en algun momento sientes que no puedes mas, recuerdo que eres brava pero tambien eres un partizado. Te quiero un monton ingeniera madisson 💕</p>
                 <a href="https://open.spotify.com/track/3QOTVrgC8IeMJrGAhs14Xs?si=e53e277ddb1f429b">te dejo una cancion que me recuerda mucho a ti actualmente</a>
         </div>
+        </div>
+    </div>
+
+    <!-- Modal de Calendario -->
+    <div id="modalCalendar" class="modal">
+        <div class="modal-content calendar-modal">
+            <span class="close" onclick="closeModal('modalCalendar')">&times;</span>
+            <h2 class="modal-title">Planifiquemos algo</h2>
+            <div class="modal-text">
+                <p>Dejemos un poco las cosas de lado y solo seamos, me gustaria que vieramos la exposicion de arte que esta en bogota.</p>
+                <p>Se que llenaste tu agenda y te queda poco tiempo, me encantaria verte y te ahorro el tiempo de ir a mi chat, que no esta funcionando.</p>
+                <p>Tambien nose que tan nostalgica seas, posiblemente ni veas esto.</p>
+
+                <form id="calendarForm" class="calendar-form">
+                    <div class="form-group">
+                        <label for="eventDate">📅 Fecha y Hora:</label>
+                        <input type="datetime-local" id="eventDate" name="eventDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventTitle">💕 ¿Donde te gustaria vernos?</label>
+                        <input type="text" id="eventTitle" name="eventTitle" placeholder="Ej: Museo del oro, frente a la cinemateca..." required>
+                    </div>
+
+                    <div class="questions-section">
+                        <h3>Cuéntame tus preferencias:</h3>
+                        
+                        <div class="question">
+                            <label>🌅 ¿Te recojo en tu casa?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="dayYes" name="dayActivity" value="si" required>
+                                <label for="dayYes">Sí</label>
+                                <input type="radio" id="dayNo" name="dayActivity" value="no" required>
+                                <label for="dayNo">No</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <label> ¿Te gusta que nos vistieramos del mismo color?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="italianYes" name="italianFood" value="si" required>
+                                <label for="italianYes">Sí</label>
+                                <input type="radio" id="italianNo" name="italianFood" value="no" required>
+                                <label for="italianNo">No</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <label>🌃 ¿Te gustan los lugares con vista nocturna?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="nightViewYes" name="nightView" value="si" required>
+                                <label for="nightViewYes">Sí</label>
+                                <input type="radio" id="nightViewNo" name="nightView" value="no" required>
+                                <label for="nightViewNo">No</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <label>💃 ¿Te gustaria bailar ese dia?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="danceYes" name="dancing" value="si" required>
+                                <label for="danceYes">Sí</label>
+                                <input type="radio" id="danceNo" name="dancing" value="no" required>
+                                <label for="danceNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequest">✨ Algo especial que quieras agregar:</label>
+                        <textarea id="specialRequest" name="specialRequest" placeholder="Aqui puedes poner ejemplo los colores de ropa, o detalles..."></textarea>
+                    </div>
+                    <p>indiscutible, te vas en moto o carro para tu casa, y no, no pienses en el dinero para ese dia.</p>
+                    <button type="submit" class="submit-btn">💌 Enviar mis preferencias</button>
+                </form>
+            </div>
         </div>
     </div>
 
