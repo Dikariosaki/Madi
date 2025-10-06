@@ -155,18 +155,11 @@ Tu pareja ha planificado algo especial contigo:
 
 💭 SUS PREFERENCIAS:
 • Te recojo en casa: ${formData.dayActivity}
-• Vestirnos del mismo color: ${formData.italianFood}
 • Vista nocturna: ${formData.nightView}
-• Bailar: ${formData.dancing}
 
 ${formData.specialRequest ? `✨ PETICIÓN ESPECIAL:\n${formData.specialRequest}\n\n` : ''}📧 INFORMACIÓN DEL ENVÍO:
 • Enviado el: ${formattedDate}
-• Zona horaria: ${timeZone}
-
-¡Espero que puedan disfrutar juntos de este momento especial! 💖
-
-Con amor,
-Tu sistema de planificación romántica 💕`);
+• Zona horaria: ${timeZone}`);
 
         const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -175,7 +168,7 @@ Tu sistema de planificación romántica 💕`);
 
         if (response.ok) {
             console.log('✅ Datos del calendario enviados exitosamente');
-            return { success: true, message: '¡Planificación enviada exitosamente! 💕' };
+            return { success: true, message: '¡Planificación enviada exitosamente!' };
         } else {
             console.log('⚠️ Error al enviar datos del calendario');
             return { success: false, message: 'Error al enviar la planificación. Inténtalo de nuevo.' };
